@@ -6,40 +6,25 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        Random rand = new Random();
         int numrondas;
         int opciondejuego = 1;
         while (opciondejuego != 0) {
-            System.out.println("----------------------------------------");
-            System.out.println(" Bienvenido a la App de Tip-Top ");
-            System.out.println("----------------------------------------");
-            System.out.println("1- Piedra, papel o tijera.");
+            System.out.println("--------------------------------------------");
+            System.out.println(" Bienvenido al juego Piedra, papel o tijera ");
+            System.out.println("---------------------------------------------");
+            System.out.println("1- Jugar a Piedra, papel o tijera.");
             System.out.println("0- Salir");
             System.out.println("Elija opción");
             opciondejuego = input.nextInt();
             switch (opciondejuego) {
                 case 1:
-                    System.out.println("----------------------------------------------");
-                    System.out.println(" Bienvenido al juego Piedra, papel o tijera ");
-                    System.out.println("----------------------------------------------");
+
                     System.out.print("¿Cuantas rondas quieres jugar? ");
                     numrondas = input.nextInt();
                     MuestraPiedrapapelotijera(numrondas);
                     break;
-                case 2:
-                    System.out.println("----------------------------------------------------------");
-                    System.out.println(" Bienvenido al juego de Adivinar un numero del 1 al 100");
-                    System.out.println("----------------------------------------------------------");
-                    System.out.print("¿Cuantos intentos quieres? ");
-                    numrondas = input.nextInt();
-                    break;
-                case 3:
-                    System.out.println("----------------------------------------");
-                    System.out.println(" Bienvenido al juego Pares o Nones ");
-                    System.out.println("----------------------------------------");
-                    System.out.print("¿Cuantas rondas quieres jugar? ");
-                    numrondas = input.nextInt();
-                    break;
+
+
                 case 0:
                     System.out.println("¡Hasta pronto!");
                     break;
@@ -49,7 +34,6 @@ public class Main {
 
     public static void MuestraPiedrapapelotijera(int numrondas) {
         Scanner input = new Scanner(System.in);
-        Random rand = new Random();
         int seleccionjuego1;
         int puntosjugador = 0;
         int puntosordenador = 0;
@@ -68,27 +52,27 @@ public class Main {
             num = generaNumeroAleatorio(limInferior, limSuperior);
             if (num == seleccionjuego1) {
                 System.out.println("Empate.\n");
-            } else if (num == 1 && seleccionjuego1 == 2) {
+            } else if (num == 1 && seleccionjuego1 == 2) {//Ordenador: piedra y Jugador: papel -- Gana Jugador.
                 System.out.println("Jugador: papel -- Gana Jugador.");
                 System.out.println("El ordenador ha elegido piedra.");
                 puntosjugador++;
-            } else if (num == 1 && seleccionjuego1 == 3) {
+            } else if (num == 1 && seleccionjuego1 == 3) {//Ordenador: piedra y Jugador: tijera -- Gana Ordenador.
                 System.out.println("Jugador: tijera -- Gana Ordenador.");
                 System.out.println("El ordenador ha elegido piedra.\n");
                 puntosordenador++;
-            } else if (num == 2 && seleccionjuego1 == 1) {
+            } else if (num == 2 && seleccionjuego1 == 1) {//Ordenador: papel y Jugador: piedra -- Gana Ordenador.
                 System.out.println("Jugador: piedra -- Gana Ordenador.");
                 System.out.println("El ordenador ha elegido papel.\n");
                 puntosordenador++;
-            } else if (num == 2 && seleccionjuego1 == 3) {
+            } else if (num == 2 && seleccionjuego1 == 3) {//Ordenador: papel y Jugador: tijera -- Gana Jugador.
                 System.out.println("Jugador: tijera -- Gana Jugador.");
                 System.out.println("El ordenador ha elegido papel.\n");
                 puntosjugador++;
-            } else if (num == 3 && seleccionjuego1 == 1) {
+            } else if (num == 3 && seleccionjuego1 == 1) {//Ordenador: tijera y Jugador: piedra -- Gana Jugador.
                 System.out.println("Jugador: piedra -- Gana Jugador.");
                 System.out.println("El ordenador ha elegido tijera.\n");
                 puntosjugador++;
-            } else if (num == 3 && seleccionjuego1 == 2) {
+            } else if (num == 3 && seleccionjuego1 == 2) {//Ordenador: tijera y Jugador: papel -- Gana Ordenador.
                 System.out.println("Jugador: papel -- Gana Ordenador.");
                 System.out.println("El ordenador ha elegido tijera.\n");
                 puntosordenador++;
@@ -126,4 +110,5 @@ public class Main {
         return limInferior + rand.nextInt(limSuperior + 1 - limInferior);
     }
 }
+
 
